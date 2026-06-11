@@ -12,17 +12,45 @@
 <body>
   <main class="page">
     <section class="card">
-      <p class="eyebrow">A tiny surprise</p>
-      <h1>Click to reveal the prettiest girl in the world</h1>
+      <p class="eyebrow">World ranking</p>
+      <h1>Top 3 prettiest girls in the world</h1>
 
       <button class="gift-button" id="revealButton" type="button" aria-controls="revealPanel" aria-expanded="false">
         <span class="gift-glow" aria-hidden="true"></span>
         <span class="gift-burst" aria-hidden="true"></span>
-        <img src="giftIcon.png" alt="Gift icon" class="gift-icon">
+        <img src="trophyIcon.png" alt="Trophy icon" class="gift-icon">
       </button>
 
       <div class="reveal-panel" id="revealPanel" hidden>
-        <img src="stickerLayla.jpg" alt="Layla sticker" class="sticker-image">
+        <div class="podium-stage">
+          <article class="podium-entry podium-entry--second">
+            <div class="podium-photo-frame">
+              <img src="stickerlayla2.jpg" alt="Second place" class="podium-photo">
+            </div>
+            <div class="podium-step podium-step--second">
+              <span class="podium-medal">2</span>
+            </div>
+          </article>
+
+          <article class="podium-entry podium-entry--first">
+            <div class="podium-crown" aria-hidden="true">★</div>
+            <div class="podium-photo-frame">
+              <img src="stickerLayla.jpg" alt="First place" class="podium-photo">
+            </div>
+            <div class="podium-step podium-step--first">
+              <span class="podium-medal">1</span>
+            </div>
+          </article>
+
+          <article class="podium-entry podium-entry--third">
+            <div class="podium-photo-frame">
+              <img src="Captura de pantalla 2026-06-12 014829.jpg" alt="Third place" class="podium-photo">
+            </div>
+            <div class="podium-step podium-step--third">
+              <span class="podium-medal">3</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
