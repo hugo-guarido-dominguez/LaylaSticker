@@ -66,7 +66,7 @@ h1 {
 
 .gift-button {
   position: relative;
-  margin-top: 14px;
+  margin-top: 34px;
   border: 0;
   padding: 0;
   background: transparent;
@@ -111,7 +111,7 @@ h1 {
 .gift-icon {
   position: relative;
   display: block;
-  width: min(160px, 34vw);
+  width: min(220px, 46vw);
   height: auto;
 }
 
@@ -306,7 +306,7 @@ h1 {
   }
 
   .gift-icon {
-    width: min(154px, 38vw);
+    width: min(190px, 48vw);
   }
 
   .podium-stage {
