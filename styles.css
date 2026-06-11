@@ -27,12 +27,12 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 16px;
 }
 
 .card {
   width: min(100%, 560px);
-  padding: 36px 24px 32px;
+  padding: 28px 22px 24px;
   border: 1px solid var(--card-border);
   border-radius: 32px;
   background: var(--card-bg);
@@ -53,13 +53,13 @@ body {
 h1 {
   margin: 0;
   font-family: "DM Serif Display", serif;
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.8vw, 3.15rem);
+  line-height: 0.98;
 }
 
 .gift-button {
   position: relative;
-  margin-top: 28px;
+  margin-top: 14px;
   border: 0;
   padding: 0;
   background: transparent;
@@ -87,22 +87,36 @@ h1 {
   animation: pulse 2.2s ease-in-out infinite;
 }
 
+.gift-burst {
+  position: absolute;
+  inset: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 18%, transparent 22%),
+    conic-gradient(from 0deg, rgba(255, 199, 84, 0) 0deg 20deg, rgba(255, 199, 84, 0.95) 20deg 32deg, rgba(255, 199, 84, 0) 32deg 60deg, rgba(255, 199, 84, 0.95) 60deg 72deg, rgba(255, 199, 84, 0) 72deg 100deg, rgba(255, 199, 84, 0.95) 100deg 112deg, rgba(255, 199, 84, 0) 112deg 140deg, rgba(255, 199, 84, 0.95) 140deg 152deg, rgba(255, 199, 84, 0) 152deg 180deg, rgba(255, 199, 84, 0.95) 180deg 192deg, rgba(255, 199, 84, 0) 192deg 220deg, rgba(255, 199, 84, 0.95) 220deg 232deg, rgba(255, 199, 84, 0) 232deg 260deg, rgba(255, 199, 84, 0.95) 260deg 272deg, rgba(255, 199, 84, 0) 272deg 300deg, rgba(255, 199, 84, 0.95) 300deg 312deg, rgba(255, 199, 84, 0) 312deg 360deg);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
 .gift-icon {
   position: relative;
   display: block;
-  width: min(220px, 56vw);
+  width: min(176px, 42vw);
   height: auto;
 }
 
 .reveal-panel {
   display: grid;
   justify-items: center;
-  margin-top: 18px;
+  margin-top: -8px;
   opacity: 0;
-  transform: translateY(24px) scale(0.92);
+  transform: translateY(16px) scale(0.9);
   transition:
-    opacity 420ms ease,
-    transform 420ms cubic-bezier(.2, .8, .2, 1);
+    opacity 460ms ease,
+    transform 460ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .reveal-panel.is-visible {
@@ -111,13 +125,17 @@ h1 {
 }
 
 .sticker-image {
-  width: min(100%, 360px);
-  border-radius: 28px;
+  width: min(100%, 300px);
+  border-radius: 24px;
   box-shadow: 0 22px 44px rgba(89, 31, 65, 0.2);
 }
 
 .gift-button.is-open {
-  animation: pop-away 420ms ease forwards;
+  animation: gift-lift 460ms ease forwards;
+}
+
+.gift-button.is-open .gift-burst {
+  animation: burst 520ms ease-out forwards;
 }
 
 @keyframes pulse {
@@ -132,26 +150,55 @@ h1 {
   }
 }
 
-@keyframes pop-away {
+@keyframes gift-lift {
   0% {
     opacity: 1;
     transform: scale(1);
   }
 
-  55% {
+  35% {
     opacity: 1;
-    transform: scale(1.12) rotate(-6deg);
+    transform: scale(1.14) rotate(-8deg);
   }
 
   100% {
     opacity: 0;
-    transform: scale(0.78) rotate(6deg);
+    transform: translateY(-22px) scale(0.74) rotate(8deg);
+  }
+}
+
+@keyframes burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(9);
   }
 }
 
 @media (max-width: 560px) {
   .card {
-    padding: 28px 18px 24px;
+    padding: 22px 16px 20px;
     border-radius: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.85rem);
+  }
+
+  .gift-icon {
+    width: min(154px, 38vw);
+  }
+
+  .sticker-image {
+    width: min(100%, 270px);
   }
 }

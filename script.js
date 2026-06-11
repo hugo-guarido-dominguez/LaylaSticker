@@ -15,4 +15,8 @@ revealButton.addEventListener("click", () => {
   requestAnimationFrame(() => {
     revealPanel.classList.add("is-visible");
   });
+
+  setTimeout(() => {
+    revealButton.style.pointerEvents = "none";
+  }, 500);
 });
